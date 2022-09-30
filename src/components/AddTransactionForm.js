@@ -16,21 +16,21 @@ function AddTransactionForm() {
     })
   }
 
-  function handleSubmit(e){
-    e.preventdefault()
-    fetch("http://localhost:8001/transactions",{
-      method:"post",
-      headers :{
-        "content-Type":"applicaton/json",
-      },
-      body:JSON.stringify(formData)
-    })
-    .then((r)=>r.json())
-    .then((data)=>{
-      const newTransactionData =[...TransactionsList,data]
-      setTransactions(newTransactionData)
-    })
-  }
+  // function handleSubmit(e){
+  //   e.preventdefault()
+  //   fetch("http://localhost:8001/transactions",{
+  //     method:"post",
+  //     headers :{
+  //       "content-Type":"applicaton/json",
+  //     },
+  //     body:JSON.stringify(formData)
+  //   })
+  //   .then((r)=>r.json())
+  //   .then((data)=>{
+  //     const newTransactionData =[...TransactionsList,data]
+  //     setTransactions(newTransactionData)
+  //   })
+  // }
   return (
     <div className="ui segment">
       <form className="ui form" onSubmit= {handleSubmit}>
