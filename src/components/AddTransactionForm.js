@@ -2,13 +2,16 @@ import React, {useState} from "react";
 import Transaction from "./Transaction";
 import TransactionsList from "./TransactionsList";
 
-function AddTransactionForm() {
-  const [formData,setFormData ] = useState({
-    date:"",
-    description:"",
-    category:"",
-    amount:0,
-  })
+
+function AddTransactionForm({ transactions, setTransactions}) {
+  
+  const [formData, setFormData] = useState({
+  date: "",
+  description: "",
+  category: "",
+  amount: 0,
+})
+
   function handleOnChange (e){
     let name =e.target.name
     let value =e.target.value
@@ -18,8 +21,9 @@ function AddTransactionForm() {
   }
 
   function handleSubmit(e){
+    
     e.preventdefault()
-    fetch("http://localhost:8001/transactions",{
+    fetch("http://localhost:8000/transactions",{
       method:"post",
       headers :{
         "content-Type":"applicaton/json",
@@ -28,7 +32,7 @@ function AddTransactionForm() {
     })
     .then((r)=>r.json())
     .then((data)=>{
-      const newTransactionData =[...Transactions,data]
+      const newTransactionData =[...Transaction,data]
       setTransactions(newTransactionData)
     })
   }

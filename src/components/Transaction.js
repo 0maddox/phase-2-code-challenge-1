@@ -2,13 +2,13 @@ import React from "react";
 
 function Transaction({ date, description, category, amount, id, transactions, setTransactions }) {
   function handleDeleteTransaction() {
-    fetch(` http://localhost:8001/transactions/${id}`, {
+    fetch(` http://localhost:8000/transactions/${id}`, {
       method: "DELETE"
     })
     .then((r) => r.json())
     .then(() => {
-      const availableTransactions = transactions.filter((transaction) => {
-        return transaction.id !== id
+      const availableTransactions = transactions.filter((transactions) => {
+        return transactions.id !== id
       }) 
       setTransactions(availableTransactions)
     })
