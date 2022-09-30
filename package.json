@@ -1,21 +1,21 @@
 {
-  "homepage":"http://0maddox.github.io/phase-2-code-challange/",
+  "homepage": "http://0maddox.github.io/phase-2-code-challenge-1",
   "name": "react-hooks-bank-of-flatiron-code-challenge",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "gh-pages": "^4.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
     "semantic-ui-css": "^2.2.10"
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "json-server": "^0.15.1"
   },
   "scripts": {
-    "pre-deploy":"npm run build",
-    "deploy":"gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "PORT=8000 react-scripts start",
     "server": "json-server --watch db.json -p 8001"
   },
