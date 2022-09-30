@@ -12,8 +12,7 @@ function TransactionsList({ transactions, setTransactions, search, setSearch }) 
   const filteredTransactions =transactions.filter((transactions) => transactions.description.toLowerCase().includes(search.toLowerCase()))
 
   const transactionList =filteredTransactions.map((transactions)=>{
-    return
-    <transactions transactions={transactions} setTransactions={setTransactions} key={transaction.id} date={transaction.date} description={transaction.description} category={transaction.category} amount={transaction.amount} id={transaction.id}/>
+    return<Transactions transactions={transactions} setTransactions={setTransactions} key={transaction.id} date={transaction.date} description={transaction.description} category={transaction.category} amount={transaction.amount} id={transaction.id}/>
  })
   return (
     <table className="ui celled striped padded table">

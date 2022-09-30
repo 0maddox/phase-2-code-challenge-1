@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Transaction from "./Transaction";
 import TransactionsList from "./TransactionsList";
 
 function AddTransactionForm() {
@@ -27,7 +28,7 @@ function AddTransactionForm() {
     })
     .then((r)=>r.json())
     .then((data)=>{
-      const newTransactionData =[...TransactionsList,data]
+      const newTransactionData =[...Transactions,data]
       setTransactions(newTransactionData)
     })
   }
